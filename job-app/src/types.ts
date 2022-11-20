@@ -13,5 +13,10 @@ export interface IJob {
   email: string;
   salary: string;
   employment_type: string[];
-  location?: { lat: number; long: number };
+  location: { lat: number; long: number };
+}
+
+export interface IButtonProps {
+  className: string;
+  buttonText?: string;
 }
