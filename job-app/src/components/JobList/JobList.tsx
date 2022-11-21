@@ -1,10 +1,16 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react';
 import { token } from '../../constants';
 import { IJob } from '../../types';
 import { JobCard } from '../JobCard/JobCard';
+import { Pagination } from '../Pagination/Pagination';
+import { jobsList } from './../../constants';
 
 export const JobList: FC = () => {
-	const [jobs, setJobs] = useState<IJob[]>([]);
+	const [jobs, setJobs] = useState<IJob[]>(jobsList);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const lastPage = 5;
+  const PageSize = 4;
 
   const searchJobs = async () => {
     try {
@@ -41,6 +47,17 @@ export const JobList: FC = () => {
   })
 
 	return (
-		<div className='pb-10'>{jobCards}</div>
+    <>
+      <div className='pb-5'>{jobCards.slice((currentPage === 1 ? (currentPage - 1) : ((currentPage - 1) * (PageSize))), (PageSize * currentPage))}</div>
+      <div className='w-80 flex justify-center mx-auto'>
+        <Pagination
+          currentPage={currentPage}
+          lastPage={lastPage}
+          maxLength={PageSize}
+          setCurrentPage={setCurrentPage}
+        />
+      </div>
+    </>
+		
 	)
 }

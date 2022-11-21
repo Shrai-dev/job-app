@@ -49,7 +49,7 @@ export const JobDetails: FC = () => {
               <ApplyButton className='bg-sky-900 mt-7 px-4 py-3 flex justify-around uppercase text-sm text-white font-light rounded-lg' buttonText='apply now' />
                 <h2 className='border-gray-100 border-b-2 flex py-3 mt-20 text-sky-900 text-2xl font-bold'>Additional info</h2>
               <h4 className='my-3 text-sky-800 text-xl'>Employment type</h4>
-              <ul className='flex overflow-x-scroll'>
+              <ul className='flex'>
                 {jobData.employment_type.map((item, index) => {
                   return (
                     <li className='w-32 lg:w-56 h-12 mr-2 bg-blue-100 border border-slate-400 rounded-lg flex justify-center items-center text-sky-800 font-bold' key={index}>{item}</li>
@@ -57,7 +57,7 @@ export const JobDetails: FC = () => {
                 })}
               </ul>
               <h4 className='my-3 text-sky-800 text-xl'>Benefits</h4>
-              <ul className='flex overflow-x-scroll'>
+              <ul className='flex'>
                 {jobData.benefits.map((item, index) => {
                   return (
                     <li className='w-32 lg:w-56 h-12 mr-2 bg-yellow-100 border border-yellow-400 rounded-lg flex justify-center items-center text-yellow-700 font-bold' key={index}>{item}</li>
@@ -81,15 +81,15 @@ export const JobDetails: FC = () => {
           </div>
           <div className='mb-4 lg:w-1/3 flex flex-col lg:ml-10 lg:mt-10' >
             <h2 className='border-gray-100 pb-2 lg:hidden border-b-2 lg:border-0 text-sky-900 text-2xl font-bold mt-20'>Contacts</h2>
-            <div className='w-120 lg:w-full'>
+            <div className='w-72 sm:w-96 mx-auto lg:w-full xl:w-96'>
               <div className='bg-sky-900 rounded-tl-lg rounded-tr-lg p-4 mt-4 lg:mt-0'>
-                  <p className='text-gray-200 font-bold'>Department name.</p>
-                  <p className='text-gray-200 font-bold'>{jobData.name}</p>
-                  <p className='text-gray-200'>{jobData.address}</p>
-                  <p className='text-gray-200'>{jobData.phone}</p>
-                  <p className='text-gray-200'>{jobData.email}</p>
-                </div>
-              <img className='w-full h-56 rounded-bl-lg rounded-br-lg' 
+                <p className='text-gray-200 font-bold'>Department name.</p>
+                <p className='text-gray-200 font-bold'>{jobData.name}</p>
+                <p className='text-gray-200'>{jobData.address}</p>
+                <p className='text-gray-200'>{jobData.phone}</p>
+                <p className='text-gray-200'>{jobData.email}</p>
+              </div>
+                <img className='w-full h-56 rounded-bl-lg rounded-br-lg' 
                 src={`https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:${jobData.location.long},${jobData.location.lat}&zoom=14&marker=lonlat:${jobData.location.long},${jobData.location.lat};color:%23ffffff;size:medium&apiKey=${mapApiKey}`}
                 alt={jobData.address} />
               </div>              

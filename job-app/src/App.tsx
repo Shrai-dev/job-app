@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 
 import { Header } from './components/Header/Header';
 import { JobList } from './components/JobList/JobList';
@@ -10,7 +9,7 @@ import { JobDetails } from './components/JobDetails/JobDetails';
 const App: FC = () => {
 
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 h-screen">
       <Header />
       <Routes>
         <Route path='/' element={<JobList/>} />
