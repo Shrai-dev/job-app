@@ -1,8 +1,7 @@
 import { FC, useEffect, useState } from 'react'
+import { token } from '../../constants';
 import { IJob } from '../../types';
 import { JobCard } from '../JobCard/JobCard';
-
-const token = 'wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu'
 
 export const JobList: FC = () => {
 	const [jobs, setJobs] = useState<IJob[]>([]);
@@ -37,10 +36,11 @@ export const JobList: FC = () => {
             email={job.email} 
             salary={job.salary} 
             employment_type={job.employment_type} 
+            location={job.location}
           />
   })
 
 	return (
-		<div>{jobCards}</div>
+		<div className='pb-10'>{jobCards}</div>
 	)
 }
