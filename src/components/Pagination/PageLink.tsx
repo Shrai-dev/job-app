@@ -21,6 +21,7 @@ export const PageLink = ({
   return (
     <a
       className={className}
+      // eslint-disable-next-line
       {...otherProps}
     >
       {children}

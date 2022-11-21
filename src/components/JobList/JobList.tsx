@@ -48,7 +48,7 @@ export const JobList: FC = () => {
 
 	return (
     <>
-      <div className='pb-5'>{jobCards.slice((currentPage === 1 ? (currentPage - 1) : ((currentPage - 1) * (PageSize))), (PageSize * currentPage))}</div>
+      <div className='pb-5 xl:w-5/6 xl:mx-auto'>{jobCards.slice((currentPage === 1 ? (currentPage - 1) : ((currentPage - 1) * (PageSize))), (PageSize * currentPage))}</div>
       <div className='w-80 flex justify-center mx-auto'>
         <Pagination
           currentPage={currentPage}
