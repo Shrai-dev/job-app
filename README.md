@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is an application for searching for a job with adaptive design.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), TypeScript, Tailwind CSS.
 
 ## Available Scripts
 
